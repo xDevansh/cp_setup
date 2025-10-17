@@ -15,13 +15,13 @@ void solve(){
     }
     for(int i=0;i<partic;i++)
     {
-        if(arrScore[i]>=arrScore[condPlace-1])
+        if(arrScore[i]>=0 && arrScore[i]>=arrScore[condPlace-1])
         {
             ++count;
         }
 
     }
-    cout<<count;
+    cout<<count<<endl;
     
 }
 

@@ -8,7 +8,6 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "-D_DEBUG", // <-- ADD THIS LINE
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
@@ -33,6 +32,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                "-D_DEBUG", //chnaged
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
