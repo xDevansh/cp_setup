@@ -10,9 +10,11 @@ void solve(){
     cin>>condPlace;
     int arrScore[partic];
     int count{};
+    for (int i = 0; i < partic; i++) {
+        cin >> arrScore[i];
+    }
     for(int i=0;i<partic;i++)
     {
-        cin>>arrScore[i];
         if(arrScore[i]>=arrScore[condPlace-1])
         {
             ++count;
@@ -31,11 +33,14 @@ int main() {
 
     // This block of code is only executed when you are running the code
     // on your local machine. It will not be executed on the online judge.
-    #ifndef ONLINE_JUDGE
-        // Redirects input from input.txt
-        freopen("input.txt", "r", stdin);
-        // Redirects output to output.txt
-        freopen("output.txt", "w", stdout);
+    //only run in debug
+    #ifndef _DEBUG
+        #ifndef ONLINE_JUDGE
+            // Redirects input from input.txt
+            freopen("input.txt", "r", stdin);
+            // Redirects output to output.txt
+            freopen("output.txt", "w", stdout);
+        #endif
     #endif
 
     // If there are multiple test cases, you can use a loop
