@@ -2,61 +2,10 @@
 using namespace std;
 
 //-----------------------------------
-void solve(){
-    int rows{};
-    int columns{};
-    cin>>rows>>columns;
+void solve()
+{
 
-    if(rows>0)
-    {
-        if(columns>1)
-        {
-            if(rows%2==0)
-            {
-                cout<<(columns*(rows/2))<<endl;
-
-            }
-            else
-            {
-                if(columns%2==0)
-                {
-                    cout<<(columns*(rows/2))<<endl;
-                }
-                else{
-                    cout<<(columns*((rows-1)/2))+((columns-1)/2)<<endl;
-                }
-            }
-        }
-        else{
-                    if(columns==1)
-                    {
-                        if(rows%2==0)
-                        {
-                            cout<<(rows/2)<<endl;
-                        }
-                        else{
-                            cout<<((rows-1)/2)<<endl;
-                        }
-                    }
-                    else
-                    {
-                        cout<<0<<endl;
-                            
-                    }
-
-                
-                
-        }   
-    }
-    else
-    {
-        cout<<0<<endl;
-    }
-    
-        
-    }
-
-
+}
 
 //-----------------------------------
 int main() {

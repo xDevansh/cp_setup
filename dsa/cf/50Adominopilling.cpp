@@ -20,7 +20,7 @@ void solve(){
             {
                 if(columns%2==0)
                 {
-                    cout<<(columns*(rows/2))<<endl;
+                    cout<<(columns * ((rows-1)/2)) + (columns/2)<<endl;
                 }
                 else{
                     cout<<(columns*((rows-1)/2))+((columns-1)/2)<<endl;
