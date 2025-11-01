@@ -4,27 +4,28 @@ using namespace std;
 //-----------------------------------
 void solve()
 {
-    string string1;
-    string string2;
+    int find_row{0};
+    int find_col{0};
+    int num{};
 
-    getline(cin,string1);
-    getline(cin,string2);
-
-    transform(string1.begin(),string1.end(),back_inserter(string1),::tolower);
-    transform(string2.begin(),string2.end(),back_inserter(string2),::tolower);
-
-    if(string1<string2)
+    for(int i=0;i<5;i++)
     {
-        cout<<-1;
-
+        for(int j=0; j<5;j++)
+        {
+            cin>>num;
+            if(num==1)
+            {
+                find_row=i;
+                find_col=j;
+            }
+        }
     }
-    else if(string1>string2)
-    {
-        cout<<1;
 
-    }
-    else cout<<0;
-
+    int num_ofrow{};
+    int num_ofcol{};
+    num_ofcol=abs(find_col-2);
+    num_ofrow=abs(find_row-2);
+    cout<<num_ofcol+num_ofrow;
     
 }
 
