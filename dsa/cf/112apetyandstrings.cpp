@@ -10,8 +10,8 @@ void solve()
     getline(cin,string1);
     getline(cin,string2);
 
-    transform(string1.begin(),string1.end(),back_inserter(string1),::tolower);
-    transform(string2.begin(),string2.end(),back_inserter(string2),::tolower);
+    transform(string1.begin(),string1.end(),string1.begin(),::tolower);
+    transform(string2.begin(),string2.end(),string2.begin(),::tolower);
 
     if(string1<string2)
     {
