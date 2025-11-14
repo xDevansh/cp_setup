@@ -4,34 +4,23 @@ using namespace std;
 //-----------------------------------
 void solve()
 {
-    string s1;
-    string s2;
-    cin>>s1;
-    cin>>s2;
-    if(s1.size()==s2.size())
+    int num_stones{};
+    string stone_colours;
+
+    cin>>num_stones;
+    cin.ignore(1,'\n');
+    getline(cin,stone_colours);
+    int count{};
+    for(int i=0;i<num_stones-1;i++)
     {
-        bool is_trans=true;
-        reverse(s2.begin(),s2.end());
-        for(int i=0;i<s2.size();i++)
+        if(stone_colours[i]==stone_colours[i+1])
         {
-            if(s2[i]==s1[i])
-            {
-                if(i==s2.size()-1)
-                    cout<<"YES";
-            }
-            else{
-                is_trans=false;
-                break;
-            }
-        }
-        if(!is_trans)
-        {
-            cout<<"NO";
+            count++;
+            
         }
     }
-    else{
-        cout<<"NO";
-    }
+    cout<<count;
+
     
 }
 

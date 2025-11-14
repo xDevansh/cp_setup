@@ -4,35 +4,24 @@ using namespace std;
 //-----------------------------------
 void solve()
 {
-    string s1;
-    string s2;
-    cin>>s1;
-    cin>>s2;
-    if(s1.size()==s2.size())
+    int coordinate{};
+    int steps{};
+    cin>>coordinate;
+    if(coordinate<=5){
+        cout<<1;
+    }
+    else
     {
-        bool is_trans=true;
-        reverse(s2.begin(),s2.end());
-        for(int i=0;i<s2.size();i++)
+        if(coordinate%5==0)
         {
-            if(s2[i]==s1[i])
-            {
-                if(i==s2.size()-1)
-                    cout<<"YES";
-            }
-            else{
-                is_trans=false;
-                break;
-            }
+            cout<<coordinate/5;
         }
-        if(!is_trans)
-        {
-            cout<<"NO";
+        else{
+            cout<<(coordinate/5)+1;
         }
+            
+        
     }
-    else{
-        cout<<"NO";
-    }
-    
 }
 
 //-----------------------------------

@@ -4,35 +4,21 @@ using namespace std;
 //-----------------------------------
 void solve()
 {
-    string s1;
-    string s2;
-    cin>>s1;
-    cin>>s2;
-    if(s1.size()==s2.size())
+    int num{},times{};
+    cin>>num>>times;
+    int num_final=num;
+    for(int i=0;i<times;i++)
     {
-        bool is_trans=true;
-        reverse(s2.begin(),s2.end());
-        for(int i=0;i<s2.size();i++)
+        if(num_final%10==0)
         {
-            if(s2[i]==s1[i])
-            {
-                if(i==s2.size()-1)
-                    cout<<"YES";
-            }
-            else{
-                is_trans=false;
-                break;
-            }
+            num_final=num_final/10;
         }
-        if(!is_trans)
+        else
         {
-            cout<<"NO";
+            num_final=num_final-1;
         }
     }
-    else{
-        cout<<"NO";
-    }
-    
+    cout<<num_final;
 }
 
 //-----------------------------------

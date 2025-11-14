@@ -4,35 +4,35 @@ using namespace std;
 //-----------------------------------
 void solve()
 {
+    int num_games{};
     string s1;
-    string s2;
+    cin>>num_games;
     cin>>s1;
-    cin>>s2;
-    if(s1.size()==s2.size())
+    int anton_count{};
+    int dainik_count{};
+    for(int i=0;i<s1.size();i++)
     {
-        bool is_trans=true;
-        reverse(s2.begin(),s2.end());
-        for(int i=0;i<s2.size();i++)
+        if(s1[i]=='A')
         {
-            if(s2[i]==s1[i])
-            {
-                if(i==s2.size()-1)
-                    cout<<"YES";
-            }
-            else{
-                is_trans=false;
-                break;
-            }
+            anton_count++;
         }
-        if(!is_trans)
-        {
-            cout<<"NO";
+        else{
+            dainik_count++;
         }
+    }
+
+    if(anton_count>dainik_count)
+    {
+        cout<<"Anton";
+
+    }
+    else if(anton_count<dainik_count)
+    {
+        cout<<"Danik";
     }
     else{
-        cout<<"NO";
+        cout<<"Friendship";
     }
-    
 }
 
 //-----------------------------------

@@ -5,32 +5,22 @@ using namespace std;
 void solve()
 {
     string s1;
-    string s2;
-    cin>>s1;
-    cin>>s2;
-    if(s1.size()==s2.size())
+    getline(cin,s1);
+    multiset<char> equation;
+
+    for(int i=0;i<s1.size();i+=2)
     {
-        bool is_trans=true;
-        reverse(s2.begin(),s2.end());
-        for(int i=0;i<s2.size();i++)
-        {
-            if(s2[i]==s1[i])
-            {
-                if(i==s2.size()-1)
-                    cout<<"YES";
-            }
-            else{
-                is_trans=false;
-                break;
-            }
-        }
-        if(!is_trans)
-        {
-            cout<<"NO";
-        }
+        equation.insert(s1[i]);
     }
-    else{
-        cout<<"NO";
+    bool isFirstEl{true};
+    for(auto it:equation)
+    {
+        if(!isFirstEl)
+        {
+            cout<<"+";
+        }
+        cout<<it;
+        isFirstEl=false;
     }
     
 }

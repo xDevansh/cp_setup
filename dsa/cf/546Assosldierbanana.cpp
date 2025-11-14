@@ -4,34 +4,27 @@ using namespace std;
 //-----------------------------------
 void solve()
 {
-    string s1;
-    string s2;
-    cin>>s1;
-    cin>>s2;
-    if(s1.size()==s2.size())
+    int cost_initital{};
+    int money{};
+    int num_bananas{};
+
+    cin>>cost_initital>>money>>num_bananas;
+    int i{1};
+    int cost_total{};
+    while(i<=num_bananas)
     {
-        bool is_trans=true;
-        reverse(s2.begin(),s2.end());
-        for(int i=0;i<s2.size();i++)
-        {
-            if(s2[i]==s1[i])
-            {
-                if(i==s2.size()-1)
-                    cout<<"YES";
-            }
-            else{
-                is_trans=false;
-                break;
-            }
-        }
-        if(!is_trans)
-        {
-            cout<<"NO";
-        }
+        cost_total+=i*cost_initital;
+        i++;
+    }
+
+    if(money>=cost_total)
+    {
+        cout<<0;
     }
     else{
-        cout<<"NO";
+        cout<<cost_total-money;
     }
+
     
 }
 

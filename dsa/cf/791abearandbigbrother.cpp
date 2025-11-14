@@ -4,35 +4,26 @@ using namespace std;
 //-----------------------------------
 void solve()
 {
-    string s1;
-    string s2;
-    cin>>s1;
-    cin>>s2;
-    if(s1.size()==s2.size())
+    int age1{};
+    int age2{};
+    cin>>age1;
+    cin>>age2;
+
+    int count{1};
+    bool isWeightL{false};
+    while(!isWeightL)
     {
-        bool is_trans=true;
-        reverse(s2.begin(),s2.end());
-        for(int i=0;i<s2.size();i++)
+        age1=3*age1;
+        age2=2*age2;
+        if(age1>age2)
         {
-            if(s2[i]==s1[i])
-            {
-                if(i==s2.size()-1)
-                    cout<<"YES";
-            }
-            else{
-                is_trans=false;
-                break;
-            }
+            cout<<count<<endl;
+            isWeightL=true;
         }
-        if(!is_trans)
-        {
-            cout<<"NO";
-        }
+        count++;
+
+        
     }
-    else{
-        cout<<"NO";
-    }
-    
 }
 
 //-----------------------------------

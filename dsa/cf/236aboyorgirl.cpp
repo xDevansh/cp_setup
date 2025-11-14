@@ -5,32 +5,19 @@ using namespace std;
 void solve()
 {
     string s1;
-    string s2;
-    cin>>s1;
-    cin>>s2;
-    if(s1.size()==s2.size())
+    unordered_set<char> username;
+    getline(cin,s1);
+    for(int i=0;i<size(s1);i++)
     {
-        bool is_trans=true;
-        reverse(s2.begin(),s2.end());
-        for(int i=0;i<s2.size();i++)
-        {
-            if(s2[i]==s1[i])
-            {
-                if(i==s2.size()-1)
-                    cout<<"YES";
-            }
-            else{
-                is_trans=false;
-                break;
-            }
-        }
-        if(!is_trans)
-        {
-            cout<<"NO";
-        }
+        username.insert(s1[i]);
     }
-    else{
-        cout<<"NO";
+    if((size(username))%2==0)
+    {
+        cout<<"CHAT WITH HER!";
+    }
+    else
+    {
+        cout<<"IGNORE HIM!";
     }
     
 }

@@ -4,33 +4,39 @@ using namespace std;
 //-----------------------------------
 void solve()
 {
-    string s1;
-    string s2;
-    cin>>s1;
-    cin>>s2;
-    if(s1.size()==s2.size())
+    string sentence;
+    getline(cin,sentence);
+
+    int num_lo{};
+    int num_up{};
+
+    for(int i=0;i<sentence.size();i++)
     {
-        bool is_trans=true;
-        reverse(s2.begin(),s2.end());
-        for(int i=0;i<s2.size();i++)
+        if((((int)sentence[i])>=65) && ((int)sentence[i]<=90))
         {
-            if(s2[i]==s1[i])
-            {
-                if(i==s2.size()-1)
-                    cout<<"YES";
-            }
-            else{
-                is_trans=false;
-                break;
-            }
-        }
-        if(!is_trans)
-        {
-            cout<<"NO";
+            num_up++;
+        } 
+        else{
+            num_lo++;
         }
     }
-    else{
-        cout<<"NO";
+    if(num_lo>=num_up)
+    {
+        transform(sentence.begin(),sentence.end(),sentence.begin(),
+            [](char c)->char
+            {
+                return tolower(c);
+            });
+        cout<<sentence;
+    }
+    else
+    {
+        transform(sentence.begin(),sentence.end(),sentence.begin(),
+            [](char c)->char
+            {
+                return toupper(c);
+            });
+        cout<<sentence;
     }
     
 }

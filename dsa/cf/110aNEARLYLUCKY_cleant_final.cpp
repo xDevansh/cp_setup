@@ -4,35 +4,22 @@ using namespace std;
 //-----------------------------------
 void solve()
 {
-    string s1;
-    string s2;
-    cin>>s1;
-    cin>>s2;
-    if(s1.size()==s2.size())
-    {
-        bool is_trans=true;
-        reverse(s2.begin(),s2.end());
-        for(int i=0;i<s2.size();i++)
-        {
-            if(s2[i]==s1[i])
-            {
-                if(i==s2.size()-1)
-                    cout<<"YES";
-            }
-            else{
-                is_trans=false;
-                break;
-            }
-        }
-        if(!is_trans)
-        {
-            cout<<"NO";
+    std::string s;
+    std::cin >> s;
+
+    int lucky_digits_count = 0;
+
+    for (char c : s) {
+        if (c == '4' || c == '7') {
+            lucky_digits_count++;
         }
     }
-    else{
-        cout<<"NO";
+
+    if (lucky_digits_count == 4 || lucky_digits_count == 7) {
+        std::cout << "YES" << std::endl;
+    } else {
+        std::cout << "NO" << std::endl;
     }
-    
 }
 
 //-----------------------------------
